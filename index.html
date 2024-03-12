@@ -11,42 +11,33 @@
 <body>
 
     <div id="app">
-        {{mensagem}}<br>
-        Valor Total: {{valoTotal}}<br>
-        Logado: {{logado}}<br>
-        Hobbies: {{hobbies}}<br>
-        Hobbie: {{hobbies[0]}}<br>
-        Perfil: {{perfil.site}}
-        Perfil: {{perfil.cursos[0].nome}}
+ Somar - {{ somar() }}<br>
+ Subtrair - {{ subtrair() }}<br>
+ Multiplicar - {{ multiplicar() }}<br>
+ Dividir - {{ dividir() }}<br>
     </div>
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
-                mensagem: 'Primeiro template controlado pelo Vue!',
-                valoTotal: 150.43,
-                logado: false,
-                hobbies: ['futebol', 'esportes', 'programação'],
-                perfil: {
-                    nome: 'Jamal',
-                    site: 'jamal.com.br',
-                    idade: 33,
-                    cursos: [
-                        {
-                            nome: 'Laravel',
-                            cargaHoraria: '120 horas'
-                        },
-                        {
-                            nome: 'VueJS',
-                            cargaHoraria: '49 horas'
-                        },
-                        {
-                            nome: 'Java',
-                            cargaHoraria: '240 horas'
-                        }
-                    ]
-                }
-            }
+              n1: 3,
+              n2: 4
+            },
+            methods: {
+                   somar: function somar() {
+                       return this.n1 + this.n2;
+                   },
+                   subtrair: function(){
+                       return this.n1 - this.n2;
+                   },
+                   multiplicar: () => {
+                       return 5 * 22
+                   },
+                   dividir() {
+                    return this.n1 / this.n2;
+                   }
+
+               }
         }); // vm convenção para receber a instancisa do ViewModel
 
     </script>
