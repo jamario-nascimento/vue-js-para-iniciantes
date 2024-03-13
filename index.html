@@ -24,6 +24,7 @@
     <div id="app">
        {{mensagem}}
        <input v-bind:value="mensagem" v-on:input="mensagem = $event.target.value" :class="teste ?'verde' : estilo">
+       <button @:click="mensagemAlerta()">Botão</button> <!-- @: é um atalho para v-on: -->
     </div>
     <script>
         const vm = new Vue({
@@ -34,7 +35,9 @@
                teste: true
             },
             methods: {
-
+                mensagemAlerta() {
+                    alert('Mensagem de alerta')
+                }
             }
         }); // vm convenção para receber a instancisa do ViewModel
 
