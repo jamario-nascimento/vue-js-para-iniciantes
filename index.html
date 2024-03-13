@@ -16,8 +16,9 @@
 <body>
 
     <div id="app">
-        <a v-bind:href="site">Site</a>
-        <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
+        <!-- : é uma forma enxuta de fazer o v-bind-->
+        <a :href="site" href="https://www.udemy.com/">Site</a><!-- sobreposição de atributos ordem de esquerda para direita-->
+        <p :class="cor" class="negrito">Entendendo a diretiva v-bind</p><!-- no calss acontece encadeamento de valores -->
         <input type="text" v-bind:placeholder="istrucaoDePreenchimento">
         <input type="checkbox" v-bind:checked="check">
     </div>
