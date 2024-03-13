@@ -6,38 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
 
     <div id="app">
- Somar - {{ somar() }}<br>
- Subtrair - {{ subtrair() }}<br>
- Multiplicar - {{ multiplicar() }}<br>
- Dividir - {{ dividir() }}<br>
+        <a v-bind:href="site">Site</a>
+        <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
+        <input type="text" v-bind:placeholder="istrucaoDePreenchimento">
+        <input type="checkbox" v-bind:checked="check">
     </div>
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
-              n1: 3,
-              n2: 4
+               site: 'https://google.com.br',
+               cor: 'red',
+               istrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
+               check: true
             },
             methods: {
-                   somar: function somar() {
-                       return this.n1 + this.n2;
-                   },
-                   subtrair: function(){
-                       return this.n1 - this.n2;
-                   },
-                   multiplicar: () => {
-                       return 5 * 22
-                   },
-                   dividir() {
-                    return this.n1 / this.n2;
-                   }
 
-               }
+            }
         }); // vm convenção para receber a instancisa do ViewModel
 
     </script>
