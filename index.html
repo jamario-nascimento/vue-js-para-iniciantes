@@ -10,26 +10,28 @@
         .red {
             color: red;
         }
+        .azul {
+            color:blue;
+        }
+        .verde {
+            color: green;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="app">
-        <!-- : é uma forma enxuta de fazer o v-bind-->
-        <a :href="site" href="https://www.udemy.com/">Site</a><!-- sobreposição de atributos ordem de esquerda para direita-->
-        <p :class="cor" class="negrito">Entendendo a diretiva v-bind</p><!-- no calss acontece encadeamento de valores -->
-        <input type="text" v-bind:placeholder="istrucaoDePreenchimento">
-        <input type="checkbox" v-bind:checked="check">
+       {{mensagem}}
+       <input v-bind:value="mensagem" v-on:input="mensagem = $event.target.value" :class="teste ?'verde' : estilo">
     </div>
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
-               site: 'https://google.com.br',
-               cor: 'red',
-               istrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
-               check: true
+               mensagem: 'Expressão',
+               estilo: 'azul',
+               teste: true
             },
             methods: {
 
